@@ -6,7 +6,7 @@
         "projects": [
           {
             "groupId": "com.axonivy.connector.google.translate",
-            "artifactId": "google-translate-demo",
+            "artifactId": "google-translate-connector-demo",
             "version": "${version}",
             "type": "iar"
           }
