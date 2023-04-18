@@ -1,0 +1,4 @@
+Language #class
+google.translate #namespace
+code String #field
+name String #field

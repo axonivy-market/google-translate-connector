@@ -1,0 +1,12 @@
+translateData #class
+com.axonivy.connector.googletranslate.demo.translate #namespace
+data com.axonivy.connector.googletranslate.Data #field
+data PERSISTENT #fieldModifier
+languages java.util.List<google.translate.Language> #field
+languages PERSISTENT #fieldModifier
+targetLanguage google.translate.Language #field
+targetLanguage PERSISTENT #fieldModifier
+inputText String #field
+inputText PERSISTENT #fieldModifier
+outputText String #field
+outputText PERSISTENT #fieldModifier

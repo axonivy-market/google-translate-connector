@@ -1,0 +1,7 @@
+Data #class
+google.translate #namespace
+text String #field
+targetLanguage String #field
+sourceLanguage String #field
+translatedText String #field
+languages java.util.List<google.translate.Language> #field
