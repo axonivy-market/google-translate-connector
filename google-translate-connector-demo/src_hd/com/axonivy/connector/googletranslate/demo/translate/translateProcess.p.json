@@ -61,7 +61,7 @@
           "map" : {
             "param.text" : "in.inputText",
             "param.targetLanguage" : "in.targetLanguage.code",
-            "param.sourceLanguate" : "\"en\""
+            "param.sourceLanguate" : "in.sourceLanguage.code"
           }
         }
       },
@@ -81,6 +81,7 @@
             "out" : "in",
             "out.data" : "in.data",
             "out.languages" : "in.languages",
+            "out.sourceLanguage" : "in.sourceLanguage",
             "out.targetLanguage" : "in.targetLanguage"
           }
         }

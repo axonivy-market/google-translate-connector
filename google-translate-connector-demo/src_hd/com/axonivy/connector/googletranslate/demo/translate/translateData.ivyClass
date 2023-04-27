@@ -10,3 +10,5 @@ inputText String #field
 inputText PERSISTENT #fieldModifier
 outputText String #field
 outputText PERSISTENT #fieldModifier
+sourceLanguage google.translate.Language #field
+sourceLanguage PERSISTENT #fieldModifier
