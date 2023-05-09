@@ -1,0 +1,39 @@
+{
+  "format" : "10.0.0",
+  "id" : "1876A5FA830ED4D6",
+  "config" : {
+    "data" : "com.axonivy.connector.googletranslate.demo.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "start.ivp",
+      "config" : {
+        "callSignature" : "start",
+        "outLink" : "start.ivp",
+        "tags" : "demo"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : { "id" : "f12", "to" : "f10" }
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 344, "y" : 64 }
+      }
+    }, {
+      "id" : "f10",
+      "type" : "DialogCall",
+      "name" : "google translate conector",
+      "config" : {
+        "dialogId" : "com.axonivy.connector.googletranslate.demo.translate",
+        "startMethod" : "start()"
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    } ]
+}

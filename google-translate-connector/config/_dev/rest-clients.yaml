@@ -1,0 +1,8 @@
+RestClients:
+  #The Google Translate API provides programmatic access to Google Translate’s machine translation technology.
+  googleTranslate:
+    UUID: 3ee78482-7dbf-4c0e-9256-cb99472b4bcd
+    Url: '{ivy.app.baseurl}/api/googleTranslateMock'
+    Icon: res:/webContent/logo/google-translate-logo.png
+    Features:
+    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
