@@ -31,7 +31,7 @@ import io.swagger.v3.oas.annotations.Hidden;
 @SuppressWarnings("all")
 public class GoogleTranslateServiceMock {
 
-  static final String PATH_SUFFIX = "mock";
+  static final String PATH_SUFFIX = "googleTranslateMock";
 
   // URI where this mock can be reached: to be referenced in tests that use it!
   public static final String URI = "{"+IvyDefaultJaxRsTemplates.APP_URL+"}/api/"+PATH_SUFFIX;

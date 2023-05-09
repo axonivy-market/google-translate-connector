@@ -4,13 +4,15 @@ Say goodbye to language barriers in process automation with Axon Ivy's translati
 
 - Supports you with an easy-to-copy demo implementation to reduce your integration effort.
 - Enables low-code citizen developers to provide multi-lingual user interfaces.
+
 ## Demo
 
 Translates texts via API.
 
 ## Setup
 
-Prepare a Google Translate Key API
+Please access "Google Developers Console" page at http://code.google.com/apis/console.
+Use your Google Account to order an API key
 Copy the API-Key of your account into
 
 `config/variables.yaml` under

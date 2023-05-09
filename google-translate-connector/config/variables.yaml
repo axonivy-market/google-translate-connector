@@ -7,4 +7,8 @@
 #
 Variables:
 #  myVariable: value
-  apiKey: ''
+
+  google-translate-connector:
+    # This is a google translate api key
+    # [password]
+    apiKey: ''

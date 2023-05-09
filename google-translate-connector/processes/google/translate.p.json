@@ -63,7 +63,7 @@
         "clientErrorCode" : "ivy:error:rest:client",
         "method" : "GET",
         "queryParams" : {
-          "key" : "ivy.var.get(\"apiKey\")",
+          "key" : "ivy.var.get(\"google-translate-connector.apiKey\")",
           "target" : "in.targetLanguage",
           "q" : "in.text",
           "source" : "in.sourceLanguage"
@@ -137,7 +137,7 @@
         "clientId" : "3ee78482-7dbf-4c0e-9256-cb99472b4bcd",
         "clientErrorCode" : "ivy:error:rest:client",
         "queryParams" : {
-          "key" : "ivy.var.get(\"apiKey\")",
+          "key" : "ivy.var.get(\"google-translate-connector.apiKey\")",
           "target" : "in.targetLanguage"
         },
         "statusErrorCode" : "ivy:error:rest:client",

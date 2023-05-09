@@ -44,8 +44,12 @@ public class GoogleTranslateTest{
     clients.set(testClient);
   }
 
+  /**
+   * Test case: translate "Hello World" from English to German
+   * Expect: the translated is "Hallo Welt"
+   */
   @Test
-  public void translate1(BpmClient bpmClient){
+  public void translate_deToEn(BpmClient bpmClient){
     ExecutionResult result = bpmClient.start()
       .subProcess(Start.GOOGLE_TRANSLATE)
       .withParam("text", "Hello World")
@@ -60,8 +64,12 @@ public class GoogleTranslateTest{
 	}
   }
   
+  /**
+   * Test case: translate "Hello World" from English to English
+   * Expect: the translated is "Hello World"
+   */
   @Test
-  public void translate2(BpmClient bpmClient){
+  public void translate_enToEn(BpmClient bpmClient){
     ExecutionResult result = bpmClient.start()
       .subProcess(Start.GOOGLE_TRANSLATE)
       .withParam("text", "Hello World")
@@ -76,8 +84,12 @@ public class GoogleTranslateTest{
 	}
   }
   
+  /**
+   * Test case: translate a text from a blank to English
+   * Expect: the translated is "Hallo Welt"(default as German)
+   */
   @Test
-  public void translate3(BpmClient bpmClient){
+  public void translate_blankToEn(BpmClient bpmClient){
     ExecutionResult result = bpmClient.start()
       .subProcess(Start.GOOGLE_TRANSLATE)
       .withParam("text", "Hello World")
@@ -92,8 +104,12 @@ public class GoogleTranslateTest{
 	}
   }
 
+  /**
+   * Test case: get a list languages name by English
+   * Expect: the list has more 100 languages by English 
+   */
   @Test
-  public void languages1(BpmClient bpmClient){
+  public void languages_listOfEn(BpmClient bpmClient){
     ExecutionResult result = bpmClient.start()
       .subProcess(Start.GOOGLE_LANGUAGES)
       .withParam("targetLanguage", "en")
@@ -111,8 +127,12 @@ public class GoogleTranslateTest{
 	}
   }
   
+  /**
+   * Test case: get a list languages name by a blank value
+   * Expect: the list has more 100 languages by default as English
+   */
   @Test
-  public void languages2(BpmClient bpmClient){
+  public void languages2_listOfBlank(BpmClient bpmClient){
     ExecutionResult result = bpmClient.start()
       .subProcess(Start.GOOGLE_LANGUAGES)
       .withParam("targetLanguage", "")
