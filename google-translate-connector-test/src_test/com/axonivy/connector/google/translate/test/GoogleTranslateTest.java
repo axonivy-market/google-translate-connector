@@ -23,8 +23,8 @@ import ch.ivyteam.ivy.rest.client.security.CsrfHeaderFeature;
 import ch.ivyteam.ivy.scripting.objects.CompositeObject;
 import google.translate.Language;
 
-@IvyProcessTest
-public class GoogleTranslateTest{
+@IvyProcessTest(enableWebServer = true)
+public class GoogleTranslateTest {
 
   private static final BpmProcess TRANSLATE = BpmProcess.path("google/translate");
 
