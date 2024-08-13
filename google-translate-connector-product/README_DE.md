@@ -1,7 +1,24 @@
-Sag Lebewohl zu Sprachbarrieren in der Prozessautomatisierung mit dem Übersetzungsdienst von Axon Ivy betrieben durch Google Translate. Der Connector fügt sich nahtlos in deine bestehenden Workflows ein und ermöglicht dir eine einfache Kommunikation, unabhängig von der Sprache. Dieses Marktplatz-Element:
+# google-translate Konnektor
 
-Unterstützt dich mit einer Demo-Implementierung, um deinen Integrationsaufwand zu reduzieren.
-Ermöglicht es Low-Code-Citizen-Developern, mehrsprachige Benutzeroberflächen bereitzustellen.
-Basiert auf der REST-API-Spezifikation von Google.
-Übersetzt Text- und HTML-Dateien.
-Gibt dir die Leistungsfähigkeit der Google Translate-Funktionen.
+Sag Lebewohl zu Sprachbarrieren in der Prozessautomatisierung. Unser Konnektor zum Übersetzungsdienst von  Google Translate ermöglicht dir:
+
+- eine schnelle Integration durch die Bereitstellung einer Demo Implementierung
+- basiert auf der REST-API-Spezifikation von Google.
+- die Übersetzung von  Text- und HTML-Dateien.
+
+## Demo
+
+Translates texts via API.
+
+## Setup
+
+- Please access "Google Developers Console" page at http://code.google.com/apis/console.
+- Use your Google Account to order an API key
+- Copy the API-Key of your account into
+
+`config/variables.yaml` under
+`variables.google-translate-connector.apiKey`
+
+```
+@variables.yaml@
+```
