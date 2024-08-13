@@ -1,10 +1,11 @@
 # google-translate Konnektor
 
-Sag Lebewohl zu Sprachbarrieren in der Prozessautomatisierung. Unser Konnektor zum Übersetzungsdienst von  Google Translate ermöglicht dir:
+Sag Lebewohl zu Sprachbarrieren in der Prozessautomatisierung. Unser Konnektor zum Übersetzungsdienst von  Google Translate ermöglicht dir eine schnelle Integration durch die Bereitstellung einer Demo Implementierung.
 
-- eine schnelle Integration durch die Bereitstellung einer Demo Implementierung
+Dieser Konnektor:
+
 - basiert auf der REST-API-Spezifikation von Google.
-- die Übersetzung von  Text- und HTML-Dateien.
+- übersetzt Text- als auch HTML-Dateien.
 
 ## Demo
 
