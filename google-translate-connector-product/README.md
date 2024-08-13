@@ -1,12 +1,11 @@
 # google-translate-connector
 
-Say goodbye to language barriers in process automation with Axon Ivy's translation service [powered by Google Translate](https://cloud.google.com/translate/docs/reference/rest/v2/translate). The connector seamlessly integrates into your existing workflows, allowing you to communicate easily regardless of the language. This marketplace item:
+Say goodbye to language barriers in process automation. Our connector to the Google Translate translation service enables you to a quick integration by providing a demo implementation.
 
-- Supports you with a demo implementation to reduce your integration effort.
-- Enables low-code citizen developers to provide multi-lingual user interfaces.
-- Is based on Google's REST API specification.
-- Translates text and html files.
-- Gives you the power of Google Translate features.
+This connector
+
+- is based on the Google REST API specification.
+- translates text and HTML files.
 
 
 ## Demo
