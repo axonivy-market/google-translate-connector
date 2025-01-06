@@ -109,6 +109,7 @@ public class GoogleTranslateTest {
    * Expect: the list has more 100 languages by English 
    */
   @Test
+  @SuppressWarnings("unchecked")
   public void languages_listOfEn(BpmClient bpmClient){
     ExecutionResult result = bpmClient.start()
       .subProcess(Start.GOOGLE_LANGUAGES)
@@ -132,6 +133,7 @@ public class GoogleTranslateTest {
    * Expect: the list has more 100 languages by default as English
    */
   @Test
+  @SuppressWarnings("unchecked")
   public void languages2_listOfBlank(BpmClient bpmClient){
     ExecutionResult result = bpmClient.start()
       .subProcess(Start.GOOGLE_LANGUAGES)

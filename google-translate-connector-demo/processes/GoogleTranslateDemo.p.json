@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "1876A5FA830ED4D6",
   "config" : {
     "data" : "com.axonivy.connector.googletranslate.demo.Data"
@@ -9,14 +9,17 @@
       "type" : "RequestStart",
       "name" : "start.ivp",
       "config" : {
-        "callSignature" : "start",
-        "outLink" : "start.ivp",
-        "tags" : "demo"
+        "signature" : "start"
       },
+      "tags" : [
+        "demo"
+      ],
       "visual" : {
         "at" : { "x" : 96, "y" : 64 }
       },
-      "connect" : { "id" : "f12", "to" : "f10" }
+      "connect" : [
+        { "id" : "f12", "to" : "f10" }
+      ]
     }, {
       "id" : "f1",
       "type" : "TaskEnd",
@@ -28,12 +31,13 @@
       "type" : "DialogCall",
       "name" : "google translate conector",
       "config" : {
-        "dialogId" : "com.axonivy.connector.googletranslate.demo.translate",
-        "startMethod" : "start()"
+        "dialog" : "com.axonivy.connector.googletranslate.demo.translate:start()"
       },
       "visual" : {
         "at" : { "x" : 224, "y" : 64 }
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     } ]
 }

@@ -1,0 +1,22 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "Data",
+  "namespace" : "google.translate",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "text",
+    "type" : "String"
+  }, {
+    "name" : "targetLanguage",
+    "type" : "String"
+  }, {
+    "name" : "sourceLanguage",
+    "type" : "String"
+  }, {
+    "name" : "translatedText",
+    "type" : "String"
+  }, {
+    "name" : "languages",
+    "type" : "java.util.List<google.translate.Language>"
+  } ]
+}
