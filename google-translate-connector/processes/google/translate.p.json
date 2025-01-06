@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "1875AF047262A50C",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -10,7 +10,7 @@
       "type" : "CallSubStart",
       "name" : "getTranslatedText(String,String,String)",
       "config" : {
-        "callSignature" : "getTranslatedText",
+        "signature" : "getTranslatedText",
         "input" : {
           "params" : [
             { "name" : "text", "type" : "String", "desc" : "The text to translate" },
@@ -32,20 +32,24 @@
         },
         "result" : {
           "params" : [
-            { "name" : "translatedText", "type" : "String" }
+            { "name" : "translatedText", "type" : "String", "desc" : "" }
           ],
           "map" : {
             "result.translatedText" : "in.translatedText"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 208, "y" : 136 },
         "labelOffset" : { "x" : -15, "y" : -23 },
         "icon" : "res:/webContent/logo/google-translate-logo.png?small"
       },
-      "connect" : { "id" : "f11", "to" : "f10" }
+      "connect" : [
+        { "id" : "f11", "to" : "f10" }
+      ]
     }, {
       "id" : "f1",
       "type" : "CallSubEnd",
@@ -58,48 +62,53 @@
       "type" : "RestClientCall",
       "name" : "Call Google Translator API",
       "config" : {
-        "path" : "/language/translate/v2",
-        "clientId" : "3ee78482-7dbf-4c0e-9256-cb99472b4bcd",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "method" : "GET",
-        "queryParams" : {
-          "key" : "ivy.var.get(\"google-translate-connector.apiKey\")",
-          "target" : "in.targetLanguage",
-          "q" : "in.text",
-          "source" : "in.sourceLanguage"
+        "target" : {
+          "clientId" : "3ee78482-7dbf-4c0e-9256-cb99472b4bcd",
+          "path" : "/language/translate/v2",
+          "templateParams" : {
+            "in.sourceLanguage" : "in.sourceLanguage"
+          },
+          "queryParams" : {
+            "key" : "ivy.var.get(\"google-translate-connector.apiKey\")",
+            "target" : "in.targetLanguage",
+            "q" : "in.text",
+            "source" : "in.sourceLanguage"
+          }
         },
-        "statusErrorCode" : "ivy:error:rest:client",
-        "templateParams" : {
-          "in.sourceLanguage" : "in.sourceLanguage"
-        },
-        "resultType" : "com.fasterxml.jackson.databind.JsonNode",
-        "responseCode" : [
-          "",
-          "import com.fasterxml.jackson.databind.JsonNode;",
-          "import java.util.Iterator;",
-          "import com.fasterxml.jackson.databind.node.ArrayNode;",
-          "if (result != null && result.get(\"data\").get(\"translations\") != null) {",
-          "  ArrayNode translations = result.get(\"data\").get(\"translations\") as ArrayNode;",
-          "  if (translations != null && translations.elements() != null) {",
-          "    in.translatedText = translations.get(0).get(\"translatedText\").asText();",
-          "  }",
-          "}"
-        ]
+        "response" : {
+          "entity" : {
+            "type" : "com.fasterxml.jackson.databind.JsonNode",
+            "code" : [
+              "",
+              "import com.fasterxml.jackson.databind.JsonNode;",
+              "import java.util.Iterator;",
+              "import com.fasterxml.jackson.databind.node.ArrayNode;",
+              "if (result != null && result.get(\"data\").get(\"translations\") != null) {",
+              "  ArrayNode translations = result.get(\"data\").get(\"translations\") as ArrayNode;",
+              "  if (translations != null && translations.elements() != null) {",
+              "    in.translatedText = translations.get(0).get(\"translatedText\").asText();",
+              "  }",
+              "}"
+            ]
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 432, "y" : 136 },
         "icon" : "res:/webContent/logo/google-translate-logo.png"
       },
-      "connect" : { "id" : "f3", "to" : "f1" }
+      "connect" : [
+        { "id" : "f3", "to" : "f1" }
+      ]
     }, {
       "id" : "f4",
       "type" : "CallSubStart",
       "name" : "getLanguages(String)",
       "config" : {
-        "callSignature" : "getLanguages",
+        "signature" : "getLanguages",
         "input" : {
           "params" : [
-            { "name" : "targetLanguage", "type" : "String" }
+            { "name" : "targetLanguage", "type" : "String", "desc" : "" }
           ],
           "map" : {
             "out.targetLanguage" : "param.targetLanguage"
@@ -115,58 +124,68 @@
         },
         "result" : {
           "params" : [
-            { "name" : "languages", "type" : "java.util.List<google.translate.Language>" }
+            { "name" : "languages", "type" : "java.util.List<google.translate.Language>", "desc" : "" }
           ],
           "map" : {
             "result.languages" : "in.languages"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 208, "y" : 296 },
         "icon" : "res:/webContent/logo/google-translate-logo.png?small"
       },
-      "connect" : { "id" : "f9", "to" : "f6" }
+      "connect" : [
+        { "id" : "f9", "to" : "f6" }
+      ]
     }, {
       "id" : "f6",
       "type" : "RestClientCall",
       "name" : "Call Google Translator API",
       "config" : {
-        "path" : "/language/translate/v2/languages",
-        "clientId" : "3ee78482-7dbf-4c0e-9256-cb99472b4bcd",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "queryParams" : {
-          "key" : "ivy.var.get(\"google-translate-connector.apiKey\")",
-          "target" : "in.targetLanguage"
+        "target" : {
+          "clientId" : "3ee78482-7dbf-4c0e-9256-cb99472b4bcd",
+          "path" : "/language/translate/v2/languages",
+          "queryParams" : {
+            "key" : "ivy.var.get(\"google-translate-connector.apiKey\")",
+            "target" : "in.targetLanguage"
+          }
         },
-        "statusErrorCode" : "ivy:error:rest:client",
-        "resultType" : "com.fasterxml.jackson.databind.JsonNode",
-        "responseCode" : [
-          "import google.translate.Language;",
-          "import com.fasterxml.jackson.databind.JsonNode;",
-          "import java.util.Iterator;",
-          "import com.fasterxml.jackson.databind.node.ArrayNode;",
-          "if (result != null && result.get(\"data\").get(\"languages\") != null) {",
-          "  ArrayNode languages = result.get(\"data\").get(\"languages\") as ArrayNode;",
-          "  if (languages != null && languages.elements() != null) {",
-          "    Iterator iterator = languages.elements();",
-          "    while(iterator.hasNext()) {",
-          "      JsonNode node = iterator.next() as JsonNode;",
-          "      Language language = new Language();",
-          "      language.code = node.get(\"language\").asText();",
-          "      language.name = node.get(\"name\").asText();",
-          "       in.languages.add(language);",
-          "    }",
-          "  }",
-          "}"
-        ]
+        "response" : {
+          "entity" : {
+            "type" : "com.fasterxml.jackson.databind.JsonNode",
+            "code" : [
+              "import google.translate.Language;",
+              "import com.fasterxml.jackson.databind.JsonNode;",
+              "import java.util.Iterator;",
+              "import com.fasterxml.jackson.databind.node.ArrayNode;",
+              "if (result != null && result.get(\"data\").get(\"languages\") != null) {",
+              "  ArrayNode languages = result.get(\"data\").get(\"languages\") as ArrayNode;",
+              "  if (languages != null && languages.elements() != null) {",
+              "    Iterator iterator = languages.elements();",
+              "    while(iterator.hasNext()) {",
+              "      JsonNode node = iterator.next() as JsonNode;",
+              "      Language language = new Language();",
+              "      language.code = node.get(\"language\").asText();",
+              "      language.name = node.get(\"name\").asText();",
+              "       in.languages.add(language);",
+              "    }",
+              "  }",
+              "}"
+            ]
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 336, "y" : 296 },
         "icon" : "res:/webContent/logo/google-translate-logo.png"
       },
-      "connect" : { "id" : "f8", "to" : "f7" }
+      "connect" : [
+        { "id" : "f8", "to" : "f7" }
+      ]
     }, {
       "id" : "f7",
       "type" : "CallSubEnd",
@@ -181,12 +200,17 @@
         "target lang's ",
         "similar source lang?"
       ],
+      "config" : {
+        "conditions" : {
+          "f2" : "!in.sourceLanguage.equalsIgnoreCase(in.targetLanguage)"
+        }
+      },
       "visual" : {
         "at" : { "x" : 304, "y" : 136 },
         "labelOffset" : { "x" : 14, "y" : 34 }
       },
       "connect" : [
-        { "id" : "f2", "to" : "f5", "condition" : "!in.sourceLanguage.equalsIgnoreCase(in.targetLanguage)" },
+        { "id" : "f2", "to" : "f5" },
         { "id" : "f14", "to" : "f13", "via" : [ { "x" : 304, "y" : 216 } ] }
       ]
     }, {
@@ -201,6 +225,8 @@
       "visual" : {
         "at" : { "x" : 432, "y" : 216 }
       },
-      "connect" : { "id" : "f12", "to" : "f1", "via" : [ { "x" : 656, "y" : 216 } ] }
+      "connect" : [
+        { "id" : "f12", "to" : "f1", "via" : [ { "x" : 656, "y" : 216 } ] }
+      ]
     } ]
 }

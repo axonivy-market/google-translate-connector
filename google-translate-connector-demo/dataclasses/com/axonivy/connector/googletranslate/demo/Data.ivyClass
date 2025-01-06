@@ -1,4 +1,0 @@
-Data #class
-com.axonivy.connector.googletranslate.demo #namespace
-translatedText String #field
-languages java.util.List<google.translate.Language> #field
