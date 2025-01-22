@@ -10,7 +10,9 @@ This connector
 
 ## Demo
 
-Translates texts via API.
+Translates text entered by the user via a simple API:
+
+![googletranslateUIinaxonivy](images/googletranslatedemo.png)
 
 ## Setup
 
