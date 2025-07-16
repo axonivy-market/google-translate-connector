@@ -69,7 +69,7 @@
             "in.sourceLanguage" : "in.sourceLanguage"
           },
           "queryParams" : {
-            "key" : "ivy.var.get(\"google-translate-connector.apiKey\")",
+            "key" : "ivy.var.get(\"googleTranslateConnector.apiKey\")",
             "target" : "in.targetLanguage",
             "q" : "in.text",
             "source" : "in.sourceLanguage"
@@ -150,7 +150,7 @@
           "clientId" : "3ee78482-7dbf-4c0e-9256-cb99472b4bcd",
           "path" : "/language/translate/v2/languages",
           "queryParams" : {
-            "key" : "ivy.var.get(\"google-translate-connector.apiKey\")",
+            "key" : "ivy.var.get(\"googleTranslateConnector.apiKey\")",
             "target" : "in.targetLanguage"
           }
         },
