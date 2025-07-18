@@ -21,8 +21,11 @@ Translates text entered by the user via a simple API:
 - Copy the API-Key of your account into
 
 `config/variables.yaml` under
-`variables.google-translate-connector.apiKey`
+`variables.googleTranslateConnector.apiKey`
 
 ```
 @variables.yaml@
 ```
+
+> [!NOTE]
+> The variable path `google-translate-connector` is renamed to `googleTranslateConnector` from 13.
