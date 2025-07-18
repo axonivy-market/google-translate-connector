@@ -3,7 +3,7 @@
   <groupId>com.axonivy.connector.google.translate</groupId><!-- your group id: e.g. com.axonivy.connector.<myconnector> or com.axonivy.utils.<myutil> -->
   <name>google-translate-connector</name><!-- fill your product name -->
   <artifactId>google-translate-connector-modules</artifactId><!-- fill your product name + a "-modules" postfix -->
-  <version>13.1.1-SNAPSHOT</version><!-- identicate your minimal compliant ivy version with the first 2 digits -->
+  <version>13.1.2-SNAPSHOT</version><!-- identicate your minimal compliant ivy version with the first 2 digits -->
   <packaging>pom</packaging>
 
   <modules>
