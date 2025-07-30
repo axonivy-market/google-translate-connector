@@ -97,6 +97,24 @@
         "at" : { "x" : 432, "y" : 136 },
         "icon" : "res:/webContent/logo/google-translate-logo.png"
       },
+      "boundaries" : [ {
+          "id" : "f17",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "#error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 464, "y" : 96 }
+          },
+          "connect" : [
+            { "id" : "f18", "to" : "f1", "via" : [ { "x" : 656, "y" : 96 } ] }
+          ]
+        } ],
       "connect" : [
         { "id" : "f3", "to" : "f1" }
       ]
@@ -183,6 +201,24 @@
         "at" : { "x" : 336, "y" : 296 },
         "icon" : "res:/webContent/logo/google-translate-logo.png"
       },
+      "boundaries" : [ {
+          "id" : "f15",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "#error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 368, "y" : 330 }
+          },
+          "connect" : [
+            { "id" : "f16", "to" : "f7", "via" : [ { "x" : 464, "y" : 328 } ] }
+          ]
+        } ],
       "connect" : [
         { "id" : "f8", "to" : "f7" }
       ]

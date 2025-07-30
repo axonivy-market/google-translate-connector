@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/data-class/13.1.0/data-class.json",
   "simpleName" : "Data",
   "namespace" : "google.translate",
   "isBusinessCaseData" : false,
@@ -18,5 +18,8 @@
   }, {
     "name" : "languages",
     "type" : "java.util.List<google.translate.Language>"
+  }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
   } ]
 }
