@@ -20,9 +20,9 @@ public class MultiEnvironmentContextProvider implements TestTemplateInvocationCo
     String testEnv = System.getProperty(GoogleTranslateTestConstants.END_TO_END_TESTING_ENVIRONMENT_KEY);
     return switch (testEnv) {
     case GoogleTranslateTestConstants.END_TO_END_TESTING_ENVIRONMENT_VALUE ->
-      Stream.of(new TestEnironmentInvocationContext(GoogleTranslateTestConstants.REAL_CALL_CONTEXT_DISPLAY_NAME));
+      Stream.of(new TestEnvironmentInvocationContext(GoogleTranslateTestConstants.REAL_CALL_CONTEXT_DISPLAY_NAME));
     default ->
-      Stream.of(new TestEnironmentInvocationContext(GoogleTranslateTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME));
+      Stream.of(new TestEnvironmentInvocationContext(GoogleTranslateTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME));
     };
   }
 
