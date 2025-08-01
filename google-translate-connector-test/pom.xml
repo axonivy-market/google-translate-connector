@@ -75,6 +75,7 @@
         <configuration>
           <systemPropertyVariables>
             <apiKey>${googleTranslate.apiKey}</apiKey>
+            <testEnvironment>${testEnvironment}</testEnvironment>
           </systemPropertyVariables>
           <statelessTestsetReporter
             implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
