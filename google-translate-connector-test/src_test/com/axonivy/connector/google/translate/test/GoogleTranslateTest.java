@@ -2,6 +2,7 @@ package com.axonivy.connector.google.translate.test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static com.axonivy.utils.e2etest.enums.E2EEnvironment.REAL_SERVER;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,8 +11,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
 import com.axonivy.connector.google.translate.test.constants.GoogleTranslateTestConstants;
-import com.axonivy.connector.google.translate.test.context.MultiEnvironmentContextProvider;
-import com.axonivy.connector.google.translate.test.utils.GoogleTranslateTestUtils;
+import com.axonivy.connector.googletranslate.mock.GoogleTranslateServiceMock;
+import com.axonivy.utils.e2etest.context.MultiEnvironmentContextProvider;
+import com.axonivy.utils.e2etest.utils.E2ETestUtils;
 
 import ch.ivyteam.ivy.application.IApplication;
 import ch.ivyteam.ivy.bpm.engine.client.BpmClient;
@@ -20,7 +22,9 @@ import ch.ivyteam.ivy.bpm.engine.client.element.BpmElement;
 import ch.ivyteam.ivy.bpm.engine.client.element.BpmProcess;
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
 import ch.ivyteam.ivy.environment.AppFixture;
+import ch.ivyteam.ivy.rest.client.RestClient;
 import ch.ivyteam.ivy.rest.client.RestClients;
+import ch.ivyteam.ivy.rest.client.security.CsrfHeaderFeature;
 import google.translate.Data;
 
 @IvyProcessTest(enableWebServer = true)
@@ -36,7 +40,24 @@ public class GoogleTranslateTest {
 
   @BeforeEach
   void beforeEach(ExtensionContext context, AppFixture fixture, IApplication app) {
-    GoogleTranslateTestUtils.setUpConfigForContext(context.getDisplayName(), fixture, app);
+    E2ETestUtils.determineConfigForContext(context.getDisplayName(), runRealEnv(fixture), runMockEnv(fixture, app));
+  }
+
+  private Runnable runRealEnv(AppFixture fixture) {
+    return () -> {
+      String apiKey = System.getProperty(GoogleTranslateTestConstants.API_KEY);
+      fixture.var("googleTranslateConnector.apiKey", apiKey);
+    };
+  }
+
+  private Runnable runMockEnv(AppFixture fixture, IApplication app) {
+    return () -> {
+      fixture.config("RestClients.googleTranslate.Url", GoogleTranslateServiceMock.URI);
+      RestClients clients = RestClients.of(app);
+      RestClient googleTranslate = clients.find("googleTranslate");
+      var testClient = googleTranslate.toBuilder().feature(CsrfHeaderFeature.class.getName()).toRestClient();
+      clients.set(testClient);
+    };
   }
 
   @AfterEach
@@ -72,11 +93,10 @@ public class GoogleTranslateTest {
    */
   @TestTemplate
   public void translate_blankToEn(ExtensionContext context, BpmClient bpmClient) {
-    boolean isRealCall = context.getDisplayName().equals(GoogleTranslateTestConstants.REAL_CALL_CONTEXT_DISPLAY_NAME);
     ExecutionResult result = bpmClient.start().subProcess(Start.GOOGLE_TRANSLATE).withParam("text", "Hello World")
         .withParam("targetLanguage", "en").withParam("sourceLanguate", "").execute();
     Data data = result.data().last();
-    if (isRealCall) {
+    if (context.getDisplayName().equals(REAL_SERVER.getDisplayName())) {
       assertTrue(!data.getTranslatedText().isEmpty());
     } else {
       assertThat(data.getTranslatedText()).isEqualTo("Hallo Welt");
