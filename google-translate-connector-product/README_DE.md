@@ -15,7 +15,7 @@ Dieser Anschluss
 
 ![googletranslateUIinaxonivy](images/googletranslatedemo.png)
 
-## Einrichtung
+## Setup
 
 - Bitte greifen zu "#Google Entwickler Konsole" Seite an
   http://Code.google.com/apis/Konsole.
