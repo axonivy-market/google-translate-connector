@@ -1,8 +1,32 @@
-# google-translate Konnektor
+# google-Übersetzen-Anschluss
 
-Sag Lebewohl zu Sprachbarrieren in der Prozessautomatisierung. Unser Konnektor zum Übersetzungsdienst von  Google Translate ermöglicht dir eine schnelle Integration durch die Bereitstellung einer Demo Implementierung.
+Sag #Lebwohl zu Sprache Hemmnisse in Arbeitsgang Automatisierung. Unser
+Anschluss zu #der #Google Übersetzt Übersetzung Bedienung aktiviert du zu einer
+flotten Integration mal versehen eine Demo Ausführung.
 
-Dieser Konnektor:
+Dieser Anschluss
 
-- basiert auf der REST-API-Spezifikation von Google.
-- übersetzt Text- als auch HTML-Dateien.
+- Ist gegründet weiter RUHT #der #Google API Beschreibung.
+- Übersetzt Text und #HTML Dateien.
+
+## Demo
+
+Übersetzt Text betreten #bei dem Nutzer via ein simples API:
+
+![googletranslateUIinaxonivy](images/googletranslatedemo.png)
+
+## Setup
+
+- Bitte greifen zu "#Google Entwickler Konsole" Seite an
+  http://Code.google.com/apis/Konsole.
+- Benutz #eure #Google Verrechnet zu bestellen #ein API Schlüssel
+- Kopier das API-Schlüssel von eurem Konto hinein
+
+`config/Variablen.yaml` Unter `Variablen.googleTranslateConnector.apiKey`
+
+```
+@variables.yaml@
+```
+
+> [!BEACHTE] Den variablen Pfad `google-übersetzen-Anschluss` ist #umbenennen zu
+> `googleTranslateConnector` von 13.
