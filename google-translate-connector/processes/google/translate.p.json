@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "1875AF047262A50C",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -69,7 +69,7 @@
             "in.sourceLanguage" : "in.sourceLanguage"
           },
           "queryParams" : {
-            "key" : "ivy.var.get(\"google-translate-connector.apiKey\")",
+            "key" : "ivy.var.get(\"googleTranslateConnector.apiKey\")",
             "target" : "in.targetLanguage",
             "q" : "in.text",
             "source" : "in.sourceLanguage"
@@ -97,6 +97,24 @@
         "at" : { "x" : 432, "y" : 136 },
         "icon" : "res:/webContent/logo/google-translate-logo.png"
       },
+      "boundaries" : [ {
+          "id" : "f17",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "#error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 464, "y" : 96 }
+          },
+          "connect" : [
+            { "id" : "f18", "to" : "f1", "via" : [ { "x" : 656, "y" : 96 } ] }
+          ]
+        } ],
       "connect" : [
         { "id" : "f3", "to" : "f1" }
       ]
@@ -150,7 +168,7 @@
           "clientId" : "3ee78482-7dbf-4c0e-9256-cb99472b4bcd",
           "path" : "/language/translate/v2/languages",
           "queryParams" : {
-            "key" : "ivy.var.get(\"google-translate-connector.apiKey\")",
+            "key" : "ivy.var.get(\"googleTranslateConnector.apiKey\")",
             "target" : "in.targetLanguage"
           }
         },
@@ -183,6 +201,24 @@
         "at" : { "x" : 336, "y" : 296 },
         "icon" : "res:/webContent/logo/google-translate-logo.png"
       },
+      "boundaries" : [ {
+          "id" : "f15",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "#error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 368, "y" : 330 }
+          },
+          "connect" : [
+            { "id" : "f16", "to" : "f7", "via" : [ { "x" : 464, "y" : 328 } ] }
+          ]
+        } ],
       "connect" : [
         { "id" : "f8", "to" : "f7" }
       ]
