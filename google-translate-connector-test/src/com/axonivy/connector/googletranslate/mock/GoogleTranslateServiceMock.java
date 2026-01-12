@@ -16,7 +16,6 @@ import javax.ws.rs.core.Response;
 import org.apache.commons.io.IOUtils;
 
 import ch.ivyteam.ivy.environment.Ivy;
-import ch.ivyteam.ivy.rest.client.config.IvyDefaultJaxRsTemplates;
 import io.swagger.v3.oas.annotations.Hidden;
 
 /**
@@ -34,7 +33,7 @@ public class GoogleTranslateServiceMock {
   static final String PATH_SUFFIX = "googleTranslateMock";
 
   // URI where this mock can be reached: to be referenced in tests that use it!
-  public static final String URI = "{"+IvyDefaultJaxRsTemplates.APP_URL+"}/api/"+PATH_SUFFIX;
+  public static final String URI = "{ivy.app.baseurl}/api/"+PATH_SUFFIX;
 
   private static int checked = 0;
 
