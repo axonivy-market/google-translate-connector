@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
   "id" : "1875AF047262A50C",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -45,7 +45,7 @@
       "visual" : {
         "at" : { "x" : 208, "y" : 136 },
         "labelOffset" : { "x" : -15, "y" : -23 },
-        "icon" : "res:/webContent/logo/google-translate-logo.png?small"
+        "icon" : "res:/webContent/logo/google-translate-logo.png"
       },
       "connect" : [
         { "id" : "f11", "to" : "f10" }
@@ -55,7 +55,7 @@
       "type" : "CallSubEnd",
       "visual" : {
         "at" : { "x" : 656, "y" : 136 },
-        "icon" : "res:/webContent/logo/google-translate-logo.png?small"
+        "icon" : "res:/webContent/logo/google-translate-logo.png"
       }
     }, {
       "id" : "f5",
@@ -154,7 +154,7 @@
       ],
       "visual" : {
         "at" : { "x" : 208, "y" : 296 },
-        "icon" : "res:/webContent/logo/google-translate-logo.png?small"
+        "icon" : "res:/webContent/logo/google-translate-logo.png"
       },
       "connect" : [
         { "id" : "f9", "to" : "f6" }
@@ -227,7 +227,7 @@
       "type" : "CallSubEnd",
       "visual" : {
         "at" : { "x" : 464, "y" : 296 },
-        "icon" : "res:/webContent/logo/google-translate-logo.png?small"
+        "icon" : "res:/webContent/logo/google-translate-logo.png"
       }
     }, {
       "id" : "f10",
