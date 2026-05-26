@@ -1,8 +1,10 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/rest-clients-1.json
 RestClients:
   #The Google Translate API provides programmatic access to Google Translate’s machine translation technology.
   googleTranslate:
-    UUID: 3ee78482-7dbf-4c0e-9256-cb99472b4bcd
+    Name: googleTranslate
     Url: https://translation.googleapis.com/
     Icon: res:/webContent/logo/google-translate-logo.png
     Features:
-    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+      - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+    LegacyUUID: 3ee78482-7dbf-4c0e-9256-cb99472b4bcd

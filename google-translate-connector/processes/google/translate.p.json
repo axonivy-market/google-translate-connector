@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "1875AF047262A50C",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -63,7 +63,7 @@
       "name" : "Call Google Translator API",
       "config" : {
         "target" : {
-          "clientId" : "3ee78482-7dbf-4c0e-9256-cb99472b4bcd",
+          "clientId" : "googleTranslate",
           "path" : "/language/translate/v2",
           "templateParams" : {
             "in.sourceLanguage" : "in.sourceLanguage"
@@ -165,7 +165,7 @@
       "name" : "Call Google Translator API",
       "config" : {
         "target" : {
-          "clientId" : "3ee78482-7dbf-4c0e-9256-cb99472b4bcd",
+          "clientId" : "googleTranslate",
           "path" : "/language/translate/v2/languages",
           "queryParams" : {
             "key" : "ivy.var.get(\"googleTranslateConnector.apiKey\")",

@@ -1,25 +1,26 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/13.1.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "Data",
   "namespace" : "google.translate",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "text",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "targetLanguage",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "sourceLanguage",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "translatedText",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "languages",
-    "type" : "java.util.List<google.translate.Language>"
+    "type" : "java.util.List<google.translate.Language>",
+    "modifiers" : [ ]
   }, {
     "name" : "error",
-    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError",
+    "modifiers" : [ ]
   } ]
 }
