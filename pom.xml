@@ -3,7 +3,7 @@
   <groupId>com.axonivy.connector.google.translate</groupId>
   <name>google-translate-connector</name>
   <artifactId>google-translate-connector-modules</artifactId>
-  <version>13.2.0-SNAPSHOT</version>
+  <version>13.2.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>
