@@ -1,0 +1,28 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
+  "simpleName" : "translateData",
+  "namespace" : "com.axonivy.connector.googletranslate.demo.translate",
+  "fields" : [ {
+    "name" : "data",
+    "type" : "com.axonivy.connector.googletranslate.Data",
+    "modifiers" : [ ]
+  }, {
+    "name" : "languages",
+    "type" : "java.util.List<google.translate.Language>",
+    "modifiers" : [ ]
+  }, {
+    "name" : "targetLanguage",
+    "type" : "google.translate.Language",
+    "modifiers" : [ ]
+  }, {
+    "name" : "inputText",
+    "modifiers" : [ ]
+  }, {
+    "name" : "outputText",
+    "modifiers" : [ ]
+  }, {
+    "name" : "sourceLanguage",
+    "type" : "google.translate.Language",
+    "modifiers" : [ ]
+  } ]
+}
