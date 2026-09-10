@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-2.json",
   "id" : "1875AF047262A50C",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -77,12 +77,12 @@
         },
         "response" : {
           "entity" : {
-            "type" : "com.fasterxml.jackson.databind.JsonNode",
+            "type" : "tools.jackson.databind.JsonNode",
             "code" : [
               "",
-              "import com.fasterxml.jackson.databind.JsonNode;",
+              "import tools.jackson.databind.JsonNode;",
+              "import tools.jackson.databind.node.ArrayNode;",
               "import java.util.Iterator;",
-              "import com.fasterxml.jackson.databind.node.ArrayNode;",
               "if (result != null && result.get(\"data\").get(\"translations\") != null) {",
               "  ArrayNode translations = result.get(\"data\").get(\"translations\") as ArrayNode;",
               "  if (translations != null && translations.elements() != null) {",
@@ -174,16 +174,17 @@
         },
         "response" : {
           "entity" : {
-            "type" : "com.fasterxml.jackson.databind.JsonNode",
+            "type" : "tools.jackson.databind.JsonNode",
             "code" : [
               "import google.translate.Language;",
-              "import com.fasterxml.jackson.databind.JsonNode;",
+              "import tools.jackson.databind.JsonNode;",
+              "import tools.jackson.databind.node.ArrayNode;",
               "import java.util.Iterator;",
-              "import com.fasterxml.jackson.databind.node.ArrayNode;",
+              "",
               "if (result != null && result.get(\"data\").get(\"languages\") != null) {",
               "  ArrayNode languages = result.get(\"data\").get(\"languages\") as ArrayNode;",
               "  if (languages != null && languages.elements() != null) {",
-              "    Iterator iterator = languages.elements();",
+              "    Iterator iterator = languages.elements().iterator();",
               "    while(iterator.hasNext()) {",
               "      JsonNode node = iterator.next() as JsonNode;",
               "      Language language = new Language();",
